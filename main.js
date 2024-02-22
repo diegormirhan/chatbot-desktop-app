@@ -16,3 +16,4 @@ app.on('window-all-closed', () => {
 app.whenReady().then(() => {
     createWindow()
 })
+
