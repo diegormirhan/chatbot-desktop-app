@@ -2,13 +2,17 @@
   "name": "chatbot-desktop-app",
   "version": "1.0.0",
   "description": "A simple windows app chatbot",
-  "main": "main.js",
+  "main": "./src/main.js",
   "scripts": {
     "start": "electron ."
   },
   "author": "Diego Mirhan",
   "license": "MIT",
   "devDependencies": {
+    "dotenv": "^16.4.5",
     "electron": "^29.0.0"
+  },
+  "dependencies": {
+    "openai": "^4.28.0"
   }
 }
