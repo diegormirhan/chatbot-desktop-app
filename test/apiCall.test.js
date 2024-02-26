@@ -14,6 +14,7 @@ const setupChatGptHandler = async () => {
                     content: 'me conte uma pequena historia separada por dois paragrafos'
                 }],
                 temperature: 0.7,
+                stream: true,
             })
             return response.choices[0].message
         } catch (error) {
