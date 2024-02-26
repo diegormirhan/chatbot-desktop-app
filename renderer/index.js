@@ -63,7 +63,7 @@ function displayMessageIa(sender, message) {
         <i class="bi bi-stars icon"></i>
         <div>
             <h2 class="sender">${sender}</h2>
-            <p class="msg">${message}</p>
+            <div class="msg">${message}</div>
         </div>
     `
     chatMessages.appendChild(messageContainerIa);
@@ -71,11 +71,11 @@ function displayMessageIa(sender, message) {
 
 async function getChatBotResponse(messageInput) {
     try {
-        const response = await ipcRenderer.invoke('call-chatgpt-api', messageInput);
+        const response = await ipcRenderer.invoke('call-chatgpt-api', messageInput + 'Response Format: HTML format without ```html');
+        console.log('Response:', response)
         return response
     } catch (error) {
             console.log('Error getting response:', error)
             return undefined;
     }
 }
-
