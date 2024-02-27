@@ -79,6 +79,4 @@ async function getChatBotResponse(messageInput) {
             return undefined;
     }
 }
-try {
-    require('electron-reloader')(module)
-  } catch (_) {}
+
