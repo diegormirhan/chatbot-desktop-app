@@ -15,7 +15,7 @@
 </head>
 
 
-<body>
+<body class="">
     <div class="header-container">
         <!-- Title Top Left -->
         <div class="top-left">
@@ -27,15 +27,15 @@
 
         <!-- Icons Top Right -->
         <div class="top-right">
-            <i class="bi bi-lightbulb icon change-theme">
+            <i class="bi bi-lightbulb icon" onclick="toggleModal('theme')">
                 <div class="popup popup-theme">
                     <p>Theme</p>
-                    <button class=" btn-theme active">System</button>
-                    <button class="btn-theme">Light</button>
-                    <button class="btn-theme">Dark</button>
+                    <button class=" btn-theme active" onclick="systemMode()">System</button>
+                    <button class="btn-theme" onclick="lightMode()">Light</button>
+                    <button class="btn-theme"onclick="darkMode()">Dark</button>
                 </div>
             </i>
-            <i class="bi bi-gear icon">
+            <i class="bi bi-gear icon" onclick="toggleModal('settings')" >
                 <div class="popup popup-settings">
                     <p>Settings</p>
                     <input type="password">
