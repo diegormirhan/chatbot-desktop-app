@@ -78,4 +78,57 @@ async function getChatBotResponse(messageInput) {
             console.log('Error getting response:', error)
             return undefined;
     }
+
 }
+
+// -------- Mode Switcher Functions --------
+function lightMode() {
+    const body = document.body;
+    body.classList.remove('dark-mode')
+    body.classList.add('light-mode');
+}
+
+function darkMode() {
+    const body = document.body;
+    body.classList.remove('light-mode')
+    body.classList.add('dark-mode');
+}
+
+function systemMode() {
+    const body = document.body;
+    body.classList.remove('light-mode')
+    body.classList.remove('dark-mode');
+}
+
+
+// -------- Pop Up Overlay Functions ----------
+function toggleModal(popupType) {
+    const popupTheme = document.querySelector('.popup-theme');
+    const popupSettings = document.querySelector('.popup-settings');
+
+    if (popupType === 'theme') {
+        if(popupTheme.style.display === 'none') {
+            popupSettings.style.display = 'none';
+            popupTheme.style.display = 'flex';
+        } else {
+            popupTheme.style.display = 'none';
+        }
+    } else if  (popupType === 'settings') {
+        if (popupSettings.style.display === 'none') {
+            popupTheme.style.display = 'none';
+            popupSettings.style.display = 'flex';
+        } else {
+            popupSettings.style.display = 'none';
+        }
+    }
+}
+
+const popupTheme = document.querySelector('.popup-theme');
+popupTheme.addEventListener('click', (event) => {
+    event.stopPropagation();
+})
+
+const popupSettings = document.querySelector('.popup-settings');
+popupSettings.addEventListener('click', (event) => {
+    event.stopPropagation();
+})
