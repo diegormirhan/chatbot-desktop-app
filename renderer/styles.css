@@ -1,17 +1,18 @@
 :root, .light-mode {
-    --color-background: #fbfbfe;
-    --color-primary: #7d7d7d;
-    --color-secondary: #5f5f5f;
-    --color-border: #e0e0e0;
+    --color-background: #f3f3f3;
+    --color-primary: #5845b7;
+    --color-secondary: #140077;
+    --color-alt: #a696fb;
+    --color-border: #323232;
     --color-accent: #03dac6;
     --color-error: #b00020;
     --color-button: #353535;
-    --color-text: #333333;
-    --color-text-secondary: #555555;
+    --color-text: #ffffff;
+    --color-text-secondary: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root, .dark-mode {
+    :root {
       --color-background: #191626;
       --color-primary: #211d34;
       --color-secondary: #4b3aa4;
@@ -23,6 +24,18 @@
       --color-text-secondary: #dddddd;
     }
   }
+
+.dark-mode {
+    --color-background: #191626;
+    --color-primary: #211d34;
+    --color-secondary: #4b3aa4;
+    --color-alt: #5c45cd;
+    --color-border: #323232;
+    --color-accent: #03da59;
+    --color-error: #cf6679;
+    --color-text: #ffffff;
+    --color-text-secondary: #dddddd;
+}
 
 * {
     margin: unset;
@@ -80,7 +93,7 @@ h1 {
 }
 
 .popup-theme {
-    width: 180px;
+    width: 200px;
     right: 100px;
     display: none;
     flex-direction: column;
