@@ -95,7 +95,6 @@ h1 {
 .popup-theme {
     width: 200px;
     right: 100px;
-    display: none;
     flex-direction: column;
     gap: 15px;
 }
@@ -103,9 +102,20 @@ h1 {
 .popup-settings {
     width: 250px;
     right: 40px;
-    display: none;
     flex-direction: column;
     gap: 15px;
+}
+
+.popup-settings input {
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: 2px solid var(--color-alt);
+    border-radius: 5px;
+    padding: 5px;
+    color: var(--color-text);
+    font-size: 17px;
+    font-weight: 600;
 }
 
 .popup p {
