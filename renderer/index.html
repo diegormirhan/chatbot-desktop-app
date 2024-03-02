@@ -26,19 +26,19 @@
 
         <!-- Icons Top Right -->
         <div class="top-right">
-            <i class="bi bi-lightbulb icon" onclick="toggleModal('theme')">
-                <div class="popup popup-theme">
+            <i class="bi bi-lightbulb icon" id="theme" onclick="toggleModal('theme')">
+                <div class="popup popup-theme" style="display: none;">
                     <p>Theme</p>
                     <button class=" btn-theme active" onclick="systemMode()">System</button>
                     <button class="btn-theme" onclick="lightMode()">Light</button>
                     <button class="btn-theme"onclick="darkMode()">Dark</button>
                 </div>
             </i>
-            <i class="bi bi-gear icon" onclick="toggleModal('settings')" >
-                <div class="popup popup-settings">
+            <i class="bi bi-gear icon" id="settings" onclick="toggleModal('settings')" >
+                <div class="popup popup-settings" style="display: none;">
                     <p>Settings</p>
                     <input type="password">
-                    <button>Save</button>
+                    <button type="submit">Save</button>
                 </div>
             </i>
         </div>
@@ -50,7 +50,7 @@
     <!-- Bottom Bar -->
     <div class="bottom-bar-container">
         <i class="bi bi-mic icon"></i>
-        <input class="prompt-input" type="text" name="prompt-input" id="prompt-input" placeholder="Type anything">
+        <input class="prompt-input" type="text" name="prompt-input" id="prompt-input" placeholder="Type anything" autofocus>
         <i class="bi bi-send icon"></i>
     </div>
 
