@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron')
 const { setupChatGptHandler } = require('./openai.js')
+const { updateApiKey } = require('./updateApiKey.js')
 
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -25,5 +26,6 @@ app.on('window-all-closed', () => {
 app.whenReady().then(() => {
     createWindow()
     setupChatGptHandler()
+    updateApiKey()
 })
 
