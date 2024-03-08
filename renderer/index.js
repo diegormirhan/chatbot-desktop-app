@@ -1,12 +1,8 @@
 const { ipcRenderer } = require("electron");
 const { lightMode, darkMode, systemMode } = require("../assets/ModeSwitcher");
-const {
-  toggleModal,
-  popupTheme,
-  popupSettings,
-  closeThemePopup, 
-  closeSettingsPopup,
-} = require("../assets/popupOverlay");
+const {toggleModal} = require("../assets/popupOverlay");
+const { themePopup, popupTheme, closeThemePopup } = require("../assets/themePopup");
+const { settingsSave, popupSettings, closeSettingsPopup } = require("../assets/settingsPopup");
 const { inputBar } = require("../assets/inputBar");
 
 // Get the input field
