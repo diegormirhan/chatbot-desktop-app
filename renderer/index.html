@@ -15,6 +15,14 @@
 
 
 <body class="">
+    <div class="custom-frame">
+        <div>ChatBot App</div>
+        <div>
+            <i class="bi bi-dash-lg" onclick="minimizeWindow()"></i>
+            <i class="bi bi-square" onclick="maximizeWindow()"></i>
+            <i class="bi bi-x-lg" onclick="closeWindow()"></i>
+        </div>
+    </div>
     <div class="header-container">
         <!-- Title Top Left -->
         <div class="top-left">
@@ -37,8 +45,12 @@
             <i class="bi bi-gear icon" id="settings" onclick="toggleModal('settings')" >
                 <div class="popup popup-settings" style="display: none;">
                     <p>Settings</p>
-                    <input type="password" id="api-key" placeholder="Enter your OpenAI key">
-                    <button type="submit" id="save-settings" onclick="settingsSave()">Save</button>
+                    <input type="password" class="api-key" id="api-key" placeholder="Enter your OpenAI key" value="">
+                    <div class="show-key-container" onclick="toggleApiKeyVisibility()">
+                        <input type="checkbox" class="show-key" name="show-key" id="show-key" value="show-key">
+                        <label for="show-key" class="show-key-label" id="show-key-label">Show key</label>    
+                    </div>
+                                        <button type="submit" id="save-settings" onclick="settingsSave()">Save</button>
                 </div>
             </i>
         </div>
