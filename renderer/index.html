@@ -37,8 +37,8 @@
             <i class="bi bi-gear icon" id="settings" onclick="toggleModal('settings')" >
                 <div class="popup popup-settings" style="display: none;">
                     <p>Settings</p>
-                    <input type="password">
-                    <button type="submit">Save</button>
+                    <input type="password" id="api-key" placeholder="Enter your OpenAI key">
+                    <button type="submit" id="save-settings" onclick="settingsSave()">Save</button>
                 </div>
             </i>
         </div>
