@@ -5,6 +5,17 @@ const { themePopup, popupTheme, closeThemePopup } = require("../assets/themePopu
 const { settingsSave, popupSettings, closeSettingsPopup } = require("../assets/settingsPopup");
 const { inputBar } = require("../assets/inputBar");
 
+// Local Theme
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme == "light-mode") {
+  lightMode();
+} else if (savedTheme == "dark-mode") {
+  darkMode();
+} else if (savedTheme == "system-mode") {
+  systemMode();
+}
+
+
 // Get the input field
 const input = document.getElementById("prompt-input");
 
@@ -83,7 +94,7 @@ async function getChatBotResponse(messageInput) {
   try {
     const response = await ipcRenderer.invoke(
       "call-chatgpt-api",
-      messageInput + "Response Instructions: HTML format without ```html"
+      messageInput
     );
     console.log("Response:", response);
     return response;
