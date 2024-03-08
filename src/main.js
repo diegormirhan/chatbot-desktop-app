@@ -10,7 +10,7 @@ const createWindow = () => {
         minWidth: 800,
         minHeight: 600,
         title: 'ChatBot App',
-        frame: true,
+        frame: false,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,

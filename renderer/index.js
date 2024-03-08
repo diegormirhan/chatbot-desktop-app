@@ -4,6 +4,8 @@ const {toggleModal} = require("../assets/popupOverlay");
 const { themePopup, popupTheme, closeThemePopup } = require("../assets/themePopup");
 const { settingsSave, popupSettings, closeSettingsPopup } = require("../assets/settingsPopup");
 const { inputBar } = require("../assets/inputBar");
+const { toggleApiKeyVisibility } = require("../assets/toggleVisibility");
+const { closeWindow, minimizeWindow, maximizeWindow } = require("../assets/customFrame");
 
 // Local Theme
 const savedTheme = localStorage.getItem("theme");
@@ -14,6 +16,11 @@ if (savedTheme == "light-mode") {
 } else if (savedTheme == "system-mode") {
   systemMode();
 }
+
+// Local Settings
+const apiKey = localStorage.getItem("api-key");
+const SettingsInput = document.getElementById("api-key");
+SettingsInput.value = apiKey;
 
 
 // Get the input field
