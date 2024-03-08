@@ -8,7 +8,7 @@
     --color-error: #b00020;
     --color-button: #353535;
     --color-text: #ffffff;
-    --color-text-secondary: #ffffff;
+    --color-text-secondary: #fdfdfd;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -106,7 +106,7 @@ h1 {
     gap: 15px;
 }
 
-.popup-settings input {
+.popup-settings .api-key {
     width: 100%;
     background-color: transparent;
     outline: none;
@@ -116,6 +116,35 @@ h1 {
     color: var(--color-text);
     font-size: 17px;
     font-weight: 600;
+}
+
+.popup-settings .api-key::placeholder {
+    color: var(--color-text-secondary);
+}
+
+.popup-settings .show-key-container {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.popup-settings .show-key-label {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.popup-settings .show-key {
+    all: unset;
+    border: 2px solid var(--color-alt);
+    border-radius: 2px;
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+.popup-settings .show-key:checked {
+    background-color: var(--color-alt);
 }
 
 .popup p {
