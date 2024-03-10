@@ -5,7 +5,28 @@ const { themePopup, popupTheme, closeThemePopup } = require("../assets/themePopu
 const { settingsSave, popupSettings, closeSettingsPopup } = require("../assets/settingsPopup");
 const { inputBar } = require("../assets/inputBar");
 const { toggleApiKeyVisibility } = require("../assets/toggleVisibility");
-const { closeWindow, minimizeWindow, maximizeWindow } = require("../assets/customFrame");
+
+// Custom Frame
+closeBtn.addEventListener("click", () => {
+  ipcRenderer.send("closeWindow");
+})
+
+minBtn.addEventListener("click", () => {
+  ipcRenderer.send("minimizeWindow");
+})
+
+maxBtn.addEventListener("click", () => {
+  ipcRenderer.send("maximizeWindow");
+  if (maxBtn.className == "bi bi-square") {
+    maxBtn.classList.remove("bi-square");
+    maxBtn.classList.add("bi-back");
+  } else {
+    maxBtn.classList.remove("bi-back");
+    maxBtn.classList.add("bi-square");
+  }
+})
+
+
 
 // Local Theme
 const savedTheme = localStorage.getItem("theme");
