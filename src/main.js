@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const { setupChatGptHandler } = require('./openai.js')
 const { updateApiKey } = require('./updateApiKey.js')
 
@@ -14,9 +14,26 @@ const createWindow = () => {
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
+            devTools: true,
         }
     })
     win.loadFile('./renderer/index.html')
+
+    ipcMain.on('closeWindow', () => {
+        win.close();
+    })
+
+    ipcMain.on('minimizeWindow', () => {
+        win.minimize();
+    })
+
+    ipcMain.on("maximizeWindow", () => {
+        if (win.isMaximized()) {
+            win.restore();
+        } else {
+            win.maximize();
+        }
+    })
 }
 
 app.on('window-all-closed', () => {
