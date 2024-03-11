@@ -43,6 +43,7 @@
     box-sizing: border-box;
     color: var(--color-text);
     -webkit-user-select: none;
+    -webkit-box-sizing: border-box;
 }
 
 body {   
@@ -53,6 +54,40 @@ h1 {
     color: var(--color-text);
     font-size: 23px;
     font-weight: 400;
+}
+
+/* --------------- CUSTOM FRAME ---------------- */
+.custom-frame {
+    -webkit-app-region: drag;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 0 10px;
+    color: var(--color-text-secondary);
+    font-size: 17px;
+    background-color: black;
+}
+
+.custom-frame p {
+    font-weight: 400;
+}
+
+.icon-frame {
+    -webkit-app-region: no-drag;
+    cursor: pointer;
+    display: flex;
+}
+.icon-frame > i {
+    padding: 10px 18px;
+    font-size: 13px;
+}
+
+.icon-frame > .bi-dash-lg:hover, .bi-square:hover, .bi-x-lg:hover, .bi-back:hover {
+    background-color: #787878;
+}
+
+.icon-frame > .bi-x-lg:hover {
+    background-color: var(--color-error)
 }
 
 
