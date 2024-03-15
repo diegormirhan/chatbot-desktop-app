@@ -14,7 +14,7 @@ const createWindow = () => {
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
-            devTools: false,
+            devTools: true,
         }
     })
     win.loadFile('./renderer/index.html')
