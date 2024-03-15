@@ -1,10 +1,10 @@
 const { ipcRenderer } = require("electron");
-const { lightMode, darkMode, systemMode } = require("../assets/ModeSwitcher");
-const {toggleModal} = require("../assets/popupOverlay");
-const { themePopup, popupTheme, closeThemePopup } = require("../assets/themePopup");
-const { settingsSave, popupSettings, closeSettingsPopup } = require("../assets/settingsPopup");
-const { inputBar } = require("../assets/inputBar");
-const { toggleApiKeyVisibility } = require("../assets/toggleVisibility");
+const { lightMode, darkMode, systemMode } = require("./modeSwitcher");
+const {toggleModal} = require("./popupOverlay");
+const { themePopup, popupTheme, closeThemePopup } = require("./themePopup");
+const { settingsSave, popupSettings, closeSettingsPopup } = require("./settingsPopup");
+const { inputBar } = require("./inputBar");
+const { toggleApiKeyVisibility } = require("./toggleVisibility");
 
 // Custom Frame
 closeBtn.addEventListener("click", () => {
