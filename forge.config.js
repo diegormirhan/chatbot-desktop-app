@@ -26,5 +26,21 @@ module.exports = {
       name: '@electron-forge/plugin-auto-unpack-natives',
       config: {},
     },
+    {
+      name: '@electron-forge/plugin-webpack',
+      config: {
+        mainConfig: './webpack.main.config.js',
+        renderer: {
+          config: './webpack.renderer.config.js',
+          entryPoints: [
+            {
+              html: './renderer/index.html',
+              js: './renderer/index.js',
+              name: 'main_window',
+            },
+          ],
+        },
+      },
+    },  
   ],
-};
+  }
