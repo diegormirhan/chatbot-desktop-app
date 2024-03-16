@@ -1,6 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 const { setupChatGptHandler } = require('./openai.js')
 const { updateApiKey } = require('./updateApiKey.js')
+const path = require('path')
 
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -14,7 +15,7 @@ const createWindow = () => {
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
-            devTools: false,
+            devTools: true,
         }
     })
     win.loadFile('./renderer/index.html')

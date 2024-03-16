@@ -1,6 +1,8 @@
 const { ipcMain } = require('electron')
 const OpenAI = require('openai')
-require('dotenv').config()
+const path = require('path');
+const dotenv = require('dotenv');
+dotenv.config({ path: path.join(__dirname, '.env') });
 
 const setupChatGptHandler = () => {
     const openai = new OpenAI({

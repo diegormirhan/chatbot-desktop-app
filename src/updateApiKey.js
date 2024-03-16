@@ -7,7 +7,7 @@ function updateApiKey() {
   const app = express();
   app.use(express.json());
 
-  app.listen(3000, () => {
+  app.listen(2000, () => {
     console.log("--> API KEY UPDATE SERVER RUNNING ON PORT 3000");
   });
 
